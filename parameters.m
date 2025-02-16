@@ -1,0 +1,31 @@
+function [Ek,Pr,Pm,q,ny,nz,elsm,k1,p,Bfield,BCzmag,BCzvel,BCymag,BCyvel,Asp,delta,sigma1,Ra,m,chim]=parameters
+%Parameters
+Ek=5e-5;
+Pr=1;
+Pm=1;
+q=Pm/Pr;
+ny =8;
+nz =8;
+elsm=[0,0.001,0.005,0.1,0.2,0.4,1];
+Ra=91;  %Only a dummy variable when run from parallel run file, no use
+k1=linspace(1,101,20);
+%k1=[1,2,3,4,5];
+%k1=35;
+p=20;  %Number of eigen values asked
+BCzmag=1; %1-insulating, 2-mixed(bottom conducting,top insulating)
+BCzvel=2; %1-no slip, 2-stressfree
+BCymag=1; %1-insulating, 2-mixed(bottom conducting,top insulating)
+BCyvel=2; %1-no slip, 2-stressfree
+Bfield=2; %1-homogeneous(constant),2-inhomogeneous
+% kmin=31;
+% kdiff=1;
+% kmax=32;                                                    %variable for initialize loop
+% km=linspace(kmin,kmax,(kmax-kmin+1)/kdiff);
+% init1=length(km);
+Asp=1;
+delta=0.14;
+%sigma1='sm';
+sigma1=1e-6;
+m=1.495;
+chim=1;
+end
